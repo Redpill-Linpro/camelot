@@ -1,8 +1,9 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.11.0"}
         ring/ring-core {:mvn/version "1.9.5"}
+        ring/ring-devel {:mvn/version "1.9.5"}
         ring/ring-defaults {:mvn/version "0.3.3"}
-        
+        org.clojure/tools.namespace {:mvn/version "1.2.0"}
         metosin/ring-http-response {:mvn/version "0.9.3"}
         compojure/compojure {:mvn/version "1.5.2"}
         redpill-linpro/clj-camel {:local/root "/home/billy/.m2/repository/redpill-linpro/clj-camel/2.1.0/clj-camel-2.1.0.jar"}
