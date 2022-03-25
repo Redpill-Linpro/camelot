@@ -1,11 +1,22 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.3"}
+ :deps {org.clojure/clojure {:mvn/version "1.11.0"}
         ring/ring-core {:mvn/version "1.9.5"}
-        compojure/compojure {:mvn/version "1.5.2"}}
+        ring/ring-defaults {:mvn/version "0.3.3"}
+        
+        metosin/ring-http-response {:mvn/version "0.9.3"}
+        compojure/compojure {:mvn/version "1.5.2"}
+        redpill-linpro/clj-camel {:local/root "/home/billy/.m2/repository/redpill-linpro/clj-camel/2.1.0/clj-camel-2.1.0.jar"}
+        ch.qos.logback/logback-classic {:mvn/version "1.2.11"}
+        ch.qos.logback/logback-core    {:mvn/version "1.2.11"}
+        org.slf4j/slf4j-api {:mvn/version "1.7.36"}
+        http-kit/http-kit {:mvn/version "2.5.3"}
+        metosin/reitit-ring {:mvn/version "0.5.17"}
+        metosin/reitit {:mvn/version "0.5.17"}
+        metosin/muuntaja {:mvn/version "0.6.8"}}
  :aliases
  {:run-m {:main-opts ["-m" "redpill-linpro.camelot"]}
   :run-x {:ns-default redpill-linpro.camelot
-          :exec-fn greet
+          :exec-fn -main
           :exec-args {:name "Clojure"}}
   :build {:deps {io.github.seancorfield/build-clj
                  {:git/tag "v0.6.3" :git/sha "9b8e09b"
