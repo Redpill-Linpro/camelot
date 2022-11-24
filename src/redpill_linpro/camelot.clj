@@ -14,7 +14,7 @@
 ; reitit + ring HTTP handling
 (defn handle-get [req]
   (let [result (stables/camel-route :direct/test "hello from GET")]
-    (response/ok (str "cool: " result))))
+    (response/ok result)))
 
 (def router
   (ring/router
