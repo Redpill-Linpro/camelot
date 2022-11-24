@@ -1,5 +1,6 @@
 (ns redpill-linpro.camelot
   (:require [clj-camel.core :as c]
+            [clj-camel.util :as u]
             [clojure.tools.macro :refer [symbol-macrolet]]
             [org.httpkit.server :as http]
             [reitit.ring :as ring]
@@ -33,7 +34,7 @@
         pd (.createProducerTemplate ctx)
         cs (.createConsumerTemplate ctx)]
     (reset! stables/camel {:context ctx :producer pd :consumer cs})
-    (stables/create-routes ctx camel-routes/test-route)
+    (stables/create-routes ctx camel-routes/test-route) ;;we should automate this
     (stables/bind-interop)
     (.start ctx)
     (.start cs)

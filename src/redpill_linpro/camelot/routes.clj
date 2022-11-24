@@ -14,7 +14,9 @@
 ; define a camel route
 (def test-route (c/route-builder (c/from "direct:test")
                                  (c/log "test-route: inbound body is ${body} and headers are ${headers}")
-                                 (c/log "does this work?")
                                  (c/set-body (reify org.apache.camel.Expression
                                                (evaluate [this exchange type]
+                                                 ;; we have full access to the Exchange object
+                                                 ;; and the Type - however let's just invoke a fn
+                                                 ;; for now
                                                  (generate-hello))))))
